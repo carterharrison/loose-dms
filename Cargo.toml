@@ -1,0 +1,9 @@
+[package]
+name = "loose-dms"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+thiserror = "1.0.64"
+regex = "1.11.1"
+lazy_static = "1.5.0"

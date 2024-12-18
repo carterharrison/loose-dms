@@ -1,4 +1,4 @@
-# loose_dms
+# loose-dms
 A Rust crate for parsing geographical coordinates from strings in various formats, including Degrees Minutes Seconds (DMS) and decimal degrees. This crate is designed to be flexible with input formats while ensuring parsed values are valid geographical coordinates.
 
 This is a direct port of the [parse-dms](https://github.com/gmaclennan/parse-dms) JavaScript library by [gmaclennan](https://github.com/gmaclennan).
@@ -17,7 +17,7 @@ Add this to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-loose_dms = "0.1.0"
+loose-dms = "0.1.0"
 ```
 
 ### Example

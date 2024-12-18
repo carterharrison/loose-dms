@@ -7,7 +7,7 @@ description = "Parse geographical coordinates from strings in DMS or decimal for
 license = "MIT"
 repository = "https://github.com/carterharrison/loose-dms"
 keywords = ["geography", "coordinates", "dms", "parsing"]
-categories = ["Science", "Science::Geospatial"]
+categories = ["science", "science::geo", "parser-implementations"]
 
 [dependencies]
 thiserror = "1.0.64"

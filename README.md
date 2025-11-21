@@ -17,7 +17,7 @@ Add this to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-loose-dms = "0.1.0"
+loose-dms = "0.1.2"
 ```
 
 ### Example

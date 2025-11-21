@@ -10,5 +10,5 @@ keywords = ["geography", "coordinates", "dms", "parsing"]
 categories = ["science", "science::geo", "parser-implementations"]
 
 [dependencies]
-thiserror = "1.0.64"
+thiserror = "2.0.17"
 regex = "1.12.2"

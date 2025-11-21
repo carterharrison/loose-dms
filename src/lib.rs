@@ -251,7 +251,7 @@ fn correct_str_num(str: &str) -> Option<f64> {
     str.parse().ok()
 }
 
-fn regex_match(dms_string: &str) -> Option<regex::Captures> {
+fn regex_match(dms_string: &str) -> Option<regex::Captures<'_>> {
     DMS_REGEX.captures(dms_string)
 }
 

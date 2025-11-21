@@ -26,15 +26,20 @@
 //! assert_eq!(coord.lng, -2.261);
 //! ```
 
-use lazy_static::lazy_static;
 use regex::Regex;
 use thiserror::Error;
 
-lazy_static! {
-    /// For more information, look at https://github.com/gmaclennan/parse-dms
-    static ref DMS_REGEX: Regex = Regex::new(
+use std::sync::OnceLock;
+
+static DMS_REGEX: OnceLock<Regex> = OnceLock::new();
+
+/// For more information, look at https://github.com/gmaclennan/parse-dms
+fn get_dms_regex() -> &'static Regex {
+    DMS_REGEX.get_or_init(|| {
+        Regex::new(
         r#"(?i)([NSEW])?\s?(-)?(\d+(?:\.\d+)?)[°º:d\s]?\s?(?:(\d+(?:\.\d+)?)['’‘′:]?\s?(?:(\d{1,2}(?:\.\d+)?)(?:"|″|’’|'')?)?)?\s?([NSEW])?"#
-    ).unwrap();
+  ).unwrap()
+    })
 }
 
 /// A geographical coordinate expressed as latitude and longitude in decimal degrees.
@@ -252,7 +257,7 @@ fn correct_str_num(str: &str) -> Option<f64> {
 }
 
 fn regex_match(dms_string: &str) -> Option<regex::Captures<'_>> {
-    DMS_REGEX.captures(dms_string)
+    get_dms_regex().captures(dms_string)
 }
 
 fn is_in_range(v: f64, min: f64, max: f64) -> bool {
